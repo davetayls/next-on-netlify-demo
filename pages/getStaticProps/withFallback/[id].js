@@ -92,7 +92,7 @@ export async function getStaticProps({ params }) {
   // Set error code if show could not be found
   const errorCode = res.status > 200 ? res.status : false;
 
-  return { props: { errorCode, show } };
+  return { props: { errorCode, show }, revalidate: 1 };
 }
 
 export default DynamicShow;
